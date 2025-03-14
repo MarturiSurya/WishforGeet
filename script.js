@@ -22,7 +22,7 @@ function displayGreeting() {
     }, 4000); 
 
     setTimeout(() => {
-        const fullMessage = "So, I created something just for you! Let's celebrate your amazing day in a way that's as unique as you are!";
+        const fullMessage = "I created something just for you! Let's celebrate your amazing day in a way that's as unique as you are!";
         document.getElementById('message').textContent = fullMessage;
     }, 9000); 
 
@@ -39,22 +39,36 @@ document.getElementById('celebrateButton').addEventListener('click', function() 
     document.getElementById('greeting').style.display = 'none'; 
     document.getElementById('celebrateButton').style.display = 'none'; 
     document.getElementById('playMusicButton').classList.remove('hidden'); 
+    setTimeout(() => {
+        const happyBirthdayLetters = document.getElementById('happyBirthdayLetters');
+        
+        // Reveal the letters container
+        happyBirthdayLetters.style.visibility = 'visible'; 
+        happyBirthdayLetters.style.opacity = 1; 
 
+        // Trigger the letter animations with individual delays
+        const letters = document.querySelectorAll('.letter');
+        letters.forEach((letter, index) => {
+            letter.style.animationDelay = `${index * 0.2}s`;  // Stagger the animation delay
+            letter.style.opacity = 1;  // Ensure opacity is set to 1 for smooth animation
+            letter.style.transform = 'translateY(0)'; // Trigger the float animation
+        });
+    }, 1000);
     setTimeout(() => {
         document.getElementById('photoFrame').style.display = 'block'; 
-    }, 500);
+    }, 3000);
 
     setTimeout(() => {
         document.getElementById('capImage').style.display = 'block';
-    }, 700); 
+    }, 5000); 
 
     setTimeout(() => {
         showBirthdayMessages(); 
-    }, 7000);
-
+    }, 14000);
+    
     setTimeout(() => {
         document.getElementById('cutCakeButton').style.display = 'block'; 
-    }, 15000); 
+    }, 19000); 
 });
 
 document.getElementById('playMusicButton').addEventListener('click', function() {

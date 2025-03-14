@@ -49,7 +49,7 @@ body {
 
 .celebrate-btn {
     padding: 15px 30px;
-    background-color: #FF6347;
+    background-color: #ff5c8e;
     color: white;
     font-size: 18px;
     border: none;
@@ -71,7 +71,7 @@ body {
     transition: opacity 2s ease;
 }
 body.full-screen-background {
-    background-image: url('Balloon-Border.png');
+    background-image: url('background-image.jpg');
     background-size: cover;
     background-position: center top;
     position: fixed;
@@ -81,8 +81,10 @@ body.full-screen-background {
     z-index: 9999;
     display: block;
     background-repeat: no-repeat;
-    background-color: rgba(213, 199, 199, 0.5); 
+    background-color: #ffae81b3; /* Soft peach color */
+    background-blend-mode: overlay; /* Blends the image with the background color */
 }
+
 
 #photoFrame {
     position: fixed;
@@ -142,7 +144,7 @@ body.full-screen-background {
     left: 50%; 
     transform: translateX(-50%); 
     padding: 10px 20px;
-    background-color: #ff5c8e;
+    background-color: #ffae81b3;
     color: white;
     border: none;
     border-radius: 5px;
@@ -152,7 +154,7 @@ body.full-screen-background {
 }
 
 #playMusicButton:hover {
-    background-color: #ff1f56;
+    background-color: #ff5e62;
 }
 
 #birthdayMessages {
@@ -161,7 +163,7 @@ body.full-screen-background {
     left: 50%; 
     transform: translate(-50%, -50%); 
     width: 300px;
-    color: #ae6c6c;
+    color: #a14a27;
     font-size: 18px;
     text-align: center; 
     z-index: 10001;
@@ -193,7 +195,7 @@ body.full-screen-background {
     left: 75%;
     padding: 10px 20px;
     font-size: 18px;
-    background-color: #f3a5c0;
+    background-color: #ffae81b3;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -201,7 +203,9 @@ body.full-screen-background {
     z-index: 10002;
     animation: fadeInButton 1.5s ease forwards;
 }
-
+#cutCakeButton:hover {
+    background-color: #ff6347;
+}
 @keyframes fadeInButton {
     0% {
         opacity: 0;
@@ -210,6 +214,52 @@ body.full-screen-background {
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+#happyBirthdayLetters {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 30px; /* Adjust space between the letters */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease;
+}
+
+.word {
+    display: flex;
+    gap: 5px; /* Adjust the gap between each letter if necessary */
+}
+
+.letter {
+    font-size: 3rem;
+    color: #FFFFFF; /* White */
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: floatLetters 1s ease forwards;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 255, 255, 0.7); /* Subtle glow */
+}
+
+
+.space {
+    height: 20px;
+}
+
+@keyframes floatLetters {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.7);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 255, 255, 0.9);
     }
 }
 

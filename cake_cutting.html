@@ -89,7 +89,7 @@
         .light-button, .hidden-button {
             padding: 10px 20px;
             font-size: 18px;
-            background-color: #f3a5c0;
+            background-color: #ff6b6b;
             border: none;
             border-radius: 10px;
             cursor: pointer;
@@ -135,7 +135,7 @@
 
         #messageButton {
             font-size: 20px;
-            background-color: #ff69b4;
+            background-color: #ff6b6b;
             color: white;
             border: none;
             border-radius: 10px;
@@ -184,7 +184,7 @@
     <script>
         document.getElementById('lightCandleButton').style.display = 'none';
         document.getElementById('blowCandleButton').style.display = 'none';
-
+    
         setTimeout(function() {
             const lightButton = document.getElementById('lightCandleButton');
             lightButton.style.display = 'inline-block';
@@ -193,12 +193,23 @@
                 lightButton.classList.add('show-button'); 
             }, 100);
         }, 2000); 
-
+    
         document.getElementById('lightCandleButton').addEventListener('click', function() {
             document.getElementById('flame').classList.add('animate-flame');
             this.classList.remove('show-button'); 
             this.style.display = 'none';
-
+    
+            // Toggle the music when lighting the candle
+            var audio = document.getElementById('music');
+            var musicIcon = document.getElementById('musicIcon');
+            if (audio.paused) {
+                audio.play();
+                musicIcon.style.color = "#f39c12"; // Change music icon color when playing
+            } else {
+                audio.pause();
+                musicIcon.style.color = "#ff69b4"; // Change music icon color when paused
+            }
+    
             setTimeout(function() {
                 const blowButton = document.getElementById('blowCandleButton');
                 blowButton.style.display = 'inline-block';
@@ -208,36 +219,36 @@
                 }, 100); 
             }, 2000); 
         });
-
+    
         document.getElementById('blowCandleButton').addEventListener('click', function() {
             document.getElementById('flame').style.opacity = 0;
             document.getElementById('flame').classList.remove('animate-flame');
             this.style.display = 'none';
-
+    
             let wishMessage = document.getElementById('wishMessage');
             wishMessage.classList.add('fade-in');
             wishMessage.style.display = "block"; 
-
+    
             setTimeout(() => {
                 wishMessage.style.display = "none"; 
                 let hopeMessage = document.getElementById('hopeMessage');
                 hopeMessage.classList.add('fade-in');
                 hopeMessage.style.display = "block";
             }, 10000);
-
+    
             setTimeout(() => {
                 document.getElementById('hopeMessage').style.display = "none"; 
                 let messageButton = document.getElementById('messageButton');
                 messageButton.style.display = 'inline-block';
                 messageButton.style.zIndex = 100;  
                 messageButton.classList.add('fade-in');
-
+    
                 messageButton.addEventListener('click', function() {
                     window.location.href = 'message.html'; 
                 });
             }, 14000);
         });
-
+    
         document.getElementById('musicIcon').addEventListener('click', function() {
             var audio = document.getElementById('music');
             if (audio.paused) {
@@ -248,7 +259,7 @@
                 this.style.color = "#ff69b4";
             }
         });
-
     </script>
+    
 </body>
 </html>
