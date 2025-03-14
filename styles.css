@@ -1,0 +1,215 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.5s;
+    font-family: Arial, sans-serif;
+}
+
+.black {
+    background-color: black;
+    color: white;
+}
+
+.white {
+    background-color: white;
+    color: black;
+}
+
+.hidden {
+    display: none;
+}
+
+.btn {
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#name {
+    color: #FF6347;
+}
+
+#message {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.celebrate-btn {
+    padding: 15px 30px;
+    background-color: #FF6347;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    display: block;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+#message,
+.celebrate-btn {
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+body.full-screen-background {
+    background-image: url('Balloon-Border.png');
+    background-size: cover;
+    background-position: center top;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    display: block;
+    background-repeat: no-repeat;
+    background-color: rgba(213, 199, 199, 0.5); 
+}
+
+#photoFrame {
+    position: fixed;
+    top: -200px;  
+    left: 5%;  
+    width: 180px;
+    height: 370px;
+    background: white;
+    border: 10px solid #fff;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 10001;
+    text-align: center;
+    animation: hangFrame 1.5s ease-in-out forwards;
+}
+
+/* Image inside the frame */
+#framedImage {
+    width: fit-content;
+    height: 360px;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+}
+
+/* Animation: Move frame down */
+@keyframes hangFrame {
+    0% { top: -200px; }  
+    100% { top: 43%; }  
+}
+
+#capImage {
+    position: fixed;
+    top: -110px; 
+    left: 13.1%; 
+    transform: translateX(-50%) rotate(+15deg); 
+    width: 55px; 
+    height: auto; 
+    display: none;
+    opacity: 1; 
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3)); 
+    mix-blend-mode: multiply; 
+    animation: dropCap 1.5s ease-out 2.5s forwards;
+}
+
+/* Animation for cap dropping */
+@keyframes dropCap {
+    0% { top: -150px; opacity: 0; }
+    100% { top: 44.5%; opacity: 0.9; } 
+}
+
+/* Play Music button at the bottom */
+#playMusicButton {
+    position: fixed;
+    bottom: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    padding: 10px 20px;
+    background-color: #ff5c8e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1000; 
+}
+
+#playMusicButton:hover {
+    background-color: #ff1f56;
+}
+
+#birthdayMessages {
+    position: absolute;
+    top: 70%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 300px;
+    color: #ae6c6c;
+    font-size: 18px;
+    text-align: center; 
+    z-index: 10001;
+    opacity: 0;  
+    transition: opacity 1s ease-in-out; 
+}
+
+.message {
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: fadeInMessage 1s ease forwards;
+    margin-bottom: 15px;
+}
+
+
+@keyframes fadeInMessage {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+#cutCakeButton {
+    position: absolute;
+    top: 70%;
+    left: 75%;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #f3a5c0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: none;
+    z-index: 10002;
+    animation: fadeInButton 1.5s ease forwards;
+}
+
+@keyframes fadeInButton {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

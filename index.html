@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lift the screen</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="black">
+    <button id="toggleButton" class="btn">Lift the screen</button>
+    
+    <div id="greeting" class="hidden">
+        <h1>Hi, <span id="name">[Your Name]</span> 😊</h1>
+        <p id="message"></p>
+        <button id="celebrateButton" class="celebrate-btn hidden">Let's Go! 🎉</button>
+    </div>
+    
+    <!-- Hanging Photo Frame -->
+    <div id="photoFrame">
+        <img src="image2.jpg" alt="Photo" id="framedImage">
+        <img id="capImage" src="cap.png" alt="Cap Image">
+    </div>
+
+    <!-- Birthday Messages -->
+    <div id="birthdayMessages">
+        <p class="message">🎉 Happy Birthday, Geet! 🥳💖 Wishing you endless joy, laughter & all your heart desires! 🎈🎂</p>
+        <p class="message">May this year bring you magic, love, and dreams coming true! ✨💫</p>
+        <p class="message">(Yes, I manifested this! 😉)</p>
+    </div>
+
+    <!-- Button to Cut the Cake -->
+    <button id="cutCakeButton" class="hidden">Let's Cut the Cake 🎂</button>
+
+    <!-- Play Music Button -->
+    <button id="playMusicButton" class="hidden">Play Music 🎶</button>
+
+    <!-- Audio Element -->
+    <audio id="birthdayMusic" src="music.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

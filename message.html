@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Special Message</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #ffcc70, #ff61a6);
+        }
+
+        .letter-frame {
+            width: 70%;
+            height: 80%;
+            background: linear-gradient(145deg, #fff, #f0f0f0);
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
+            font-size: 20px;
+            line-height: 1.6;
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .letter-content {
+            color: #333;
+        }
+
+        .letter-content h2 {
+            color: #cd1d20;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        .letter-content p {
+            margin: 15px 0;
+            font-size: 1.2rem;
+        }
+
+        #turnOffButton {
+            display: none;
+            margin-top: 20px;
+            padding: 12px 30px;
+            font-size: 18px;
+            background-color: #cd1d20;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        #turnOffButton:hover {
+            background-color: #ff4500;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+        }
+
+        #turnOffButton:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="letter-frame">
+        <div class="letter-content">
+            <h2>Dear Geet,</h2>
+            <p>I hope you had the most wonderful day! 🎉</p>
+            <p>Here’s a little message from me to you:</p>
+            <p>I am thankful for all the memories we've made, and I look forward to many more but need my time! 💖</p>
+            <p>Now, about that cake... I know we were supposed to cut it, but here's the thing: it's a virtual animated cake, so we can't actually eat it... *sigh*. Looks like we'll have to skip the cake cutting (No cake for us!😅)... but hey, the vibes are real .</p>
+            <p>Wishing you nothing but happiness and success in all that you do!</p>
+            <p> surya 💌</p>
+        </div>        
+        <button id="turnOffButton">Turn Off Screen</button>
+    </div>
+
+    <script>
+        setTimeout(function() {
+            document.getElementById('turnOffButton').style.display = 'inline-block';
+        }, 10000);
+
+        document.getElementById('turnOffButton').addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

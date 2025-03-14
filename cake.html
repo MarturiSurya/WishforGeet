@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cake with Icing and Drips</title>
+  <style>
+    $vanilla: #f7e0b3;
+$chocolate: #553c13;
+$plate-color: #ccc;
+$candle-color: #7b020b;
+$flame-color: orange;
+
+body {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.cake {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.plate {
+    position: absolute;
+    width: 140px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 50%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.layer {
+    position: absolute;
+    width: 120px;
+    height: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    @include foodColoring($chocolate);
+}
+
+.layer-bottom {
+    top: 50px;
+}
+
+.layer-middle {
+    top: 25px;
+}
+
+.layer-top {
+    top: 0;
+}
+
+.icing {
+    position: absolute;
+    background-color: $vanilla;
+    top: -10px;
+    width: 130px;
+    height: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    box-shadow: 0 0 4px lighten($vanilla, 5%), 0 0 4px lighten($vanilla, 5%);
+}
+
+.icing::before {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 20px;
+    top: 10px;
+    left: -10%;
+    background-color: lighten($vanilla, 5%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.drip {
+    position: absolute;
+    width: 40px;
+    height: 50px;
+    background-color: $vanilla;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.drip1 {
+    top: 25px;
+    left: 15px;
+    transform: skewY(10deg);
+}
+
+.drip2 {
+    top: 20px;
+    left: 70px;
+    height: 40px;
+    transform: skewY(-10deg);
+}
+
+.drip3 {
+    top: 35px;
+    left: 45px;
+    height: 45px;
+    width: 25px;
+}
+
+.candle {
+    position: absolute;
+    background-color: $candle-color;
+    width: 16px;
+    height: 50px;
+    border-radius: 8px / 4px;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.flame {
+    position: absolute;
+    background-color: $flame-color;
+    width: 15px;
+    height: 35px;
+    border-radius: 10px 10px 10px 10px / 25px 25px 10px 10px;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: flicker 1s ease-in-out infinite alternate;
+    box-shadow: 0 0 10px rgba(orange, 0.7), 0 0 20px rgba(orange, 0.6), 0 0 30px rgba(orange, 0.5);
+}
+
+@keyframes flicker {
+    0% { transform: scaleY(1) skewX(5deg); opacity: 1; }
+    50% { transform: scaleY(1.1) skewX(-5deg); opacity: 0.8; }
+    100% { transform: scaleY(1) skewX(-5deg); opacity: 1; }
+}
+
+  </style>
+</head>
+<body>
+
+    <div class="cake">
+        <div class="plate"></div>
+        <div class="layer layer-bottom"></div>
+        <div class="layer layer-middle"></div>
+        <div class="layer layer-top"></div>
+        <div class="icing"></div>
+        <div class="drip drip1"></div>
+        <div class="drip drip2"></div>
+        <div class="drip drip3"></div>
+        
+    </div>
+
+</body>
+</html>
