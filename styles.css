@@ -163,7 +163,7 @@ body.full-screen-background {
     left: 50%; 
     transform: translate(-50%, -50%); 
     width: 300px;
-    color: #a14a27;
+    color: #151414;
     font-size: 18px;
     text-align: center; 
     z-index: 10001;
@@ -204,7 +204,7 @@ body.full-screen-background {
     animation: fadeInButton 1.5s ease forwards;
 }
 #cutCakeButton:hover {
-    background-color: #ff6347;
+    background-color: #ff5e62;
 }
 @keyframes fadeInButton {
     0% {

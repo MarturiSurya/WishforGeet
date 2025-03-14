@@ -16,7 +16,7 @@ function displayGreeting() {
     }, 1000);
 
     setTimeout(() => {
-        const message = "I wanted to do something truly special for you, something that goes beyond just a simple wish.";
+        const message = "I wanted to send more than just a wish; I wanted to make this day unforgettable for you.";
         document.getElementById('message').textContent = message;
         document.getElementById('message').style.opacity = 1;
     }, 4000); 
